@@ -15,7 +15,7 @@ header {
 	margin-left: 0px;
 	font-size: 24px;
 	font-family: Roboto, sans serif;
-	padding-right: 30px;
+	padding-right: 100px;
 }
 
 #nav a {
@@ -143,16 +143,43 @@ header {
 	font-family: Roboto, sans serif;
 }
 
+#column2 h1 {
+	font-size: 20px;
+}
+
 span {
 	display: table-cell;
-	height: 50px;
-	width: 50px;
 	text-align: center;
 	vertical-align: middle;
 	border-radius: 50%;
-	background-color: #FF9681;
 }
 
+.space {
+	padding-right: 20px;
+}
+.quant {
+	background-color: rgba(255,150,129, .50);
+	height: 50px;
+	width: 50px;
+}
+
+.glaze {
+	background-color: rgba(255,150,129, .50);
+	height: 70px;
+	width: 70px;
+	font-size: 12px;
+}
+
+#addToCart {
+	background-color: #FF9681;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 5px;
+	color: #2B2D2F;
+	width: 20%;
+	font-family: Roboto, sans serif;
+	text-align: center;
+}
 
 
 
