@@ -144,10 +144,15 @@ header {
 }
 
 span {
-	padding-right: 20px;
-	background-color: #FF9681;
+	display: table-cell;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	vertical-align: middle;
 	border-radius: 50%;
+	background-color: #FF9681;
 }
+
 
 
 
