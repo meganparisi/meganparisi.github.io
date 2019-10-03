@@ -52,18 +52,20 @@ header {
 #formMainButton {
 	padding-top: 10px;
 }
+
 #mainButton {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 20%;
-	font-size: 20px;
+	width: 25%;
+	font-size: 30px;
 	font-weight: bold;
 	background-color: #FF9681;
 	text-align: center;
 	margin-top: 0px;
 	color: #2B2D2F;
 	border-radius: 10px;
+	vertical-align: middle;
 }
 
 #main {
@@ -104,6 +106,8 @@ main h2 {
 	color: #2B2D2F;
 	margin-bottom: 0px;
 	padding-left: 45px;
+	border-style: solid;
+	border-color: #0B0F54;;
 
 }
 
