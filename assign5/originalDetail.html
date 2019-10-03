@@ -3,7 +3,8 @@
 	<head>
 		<title>Bun Bun Bake Shop</title>
 		<link rel="stylesheet" type="text/css" href="test-style.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>
@@ -19,18 +20,18 @@
 		</header> 
 		<div id="originalContainer">
 			<div id="column1">
-				<form action="products.html">
+				<form id="formShopping" action="products.html">
 					<button src="products.html" id="shoppingButton" type="submit">KEEP SHOPPING</button>
 				</form>
 				<img id="originalPic2" src="https://images.unsplash.com/photo-1514509152927-0403a1b6a2d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60">
-				<p><b>THE ORIGINAL</b> our signature and most popular bun. The original is a new take on the classic roll, with hints of cinnamon and nutmeg. <br>Allergens: gluten, wheat, eggs, dairy</p>
+				<p><strong>THE ORIGINAL</strong> our signature and most popular bun. The original is a new take on the classic roll, with hints of cinnamon and nutmeg. <br><strong>Allergens</strong>: gluten, wheat, eggs, dairy</p>
 			</div>
 			<div id="column2">
 				<h1>Quantity:</h1>
 				<p><span class="quant" id="quant1">1</span> <span class="space"></span> <span class="quant" id="3">3</span> <span class="space"></span> <span class="quant" id="6">6</span> <span class="space"></span> <span class="quant" id="12">12</span></p>
 				<h1>Glaze:</h1>
 				<p><span class="glaze" id="none">None</span> <span class="space"></span> <span class="glaze" id="sugar">Sugar-Milk</span> <span class="space"></span> <span class="glaze" id="vanilla">Vanilla-Milk</span> <span class="space"></span> <span class="glaze" id="chocolate">Double-Chocolate</span></p>
-				<form action="products.html">
+				<form id="formCart" action="products.html">
 					<button id="addToCart" type="submit">ADD TO CART</button>
 				</form>
 			</div>
