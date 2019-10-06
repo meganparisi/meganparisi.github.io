@@ -2,6 +2,7 @@
 	background-color: #E5E5E5;
 }
 
+/* Nav bar and bakery title/location! */
 header {
 	font-family: "Roboto Slab", serif;
 	color: #0B0F54;
@@ -39,6 +40,8 @@ header {
 	font-weight: normal;
 }
 
+/* Homepage */
+
 #homeImage {
 	width: 100%;
 	
@@ -67,6 +70,8 @@ header {
 	border-radius: 10px;
 	vertical-align: middle;
 }
+
+/* Products Page */
 
 #main {
   display: grid;
@@ -116,6 +121,8 @@ main h2 {
 	color: #2B2D2F;
 	width: 35%;
 }
+
+/* Product Details Pages */
 
 #originalContainer {
   display: grid;
