@@ -3,7 +3,7 @@
 }
 
 header {
-	font-family: Roboto Slab, serif;
+	font-family: "Roboto Slab", serif;
 	color: #0B0F54;
 	padding-left: 45px;
 	padding-bottom: 30px;
@@ -15,7 +15,7 @@ header {
 	margin-top: 37px;
 	margin-left: 0px;
 	font-size: 24px;
-	font-family: Roboto, sans serif;
+	font-family: Roboto, "sans serif";
 	padding-right: 100px;
 }
 
@@ -132,7 +132,7 @@ main h2 {
 	grid-column-start: 1;
 	grid-column-end: 1;
 	padding-left: 45px;
-	font-family: Roboto, sans serif;
+	font-family: Roboto, "sans serif";
 }
 
 
@@ -143,7 +143,7 @@ main h2 {
 	border-radius: 10px;
 	color: #2B2D2F;
 	width: 30%;
-	font-family: Roboto, sans serif;
+	font-family: Roboto, "sans serif";
 	text-align: center;
 }
 
@@ -166,7 +166,7 @@ p {
 
 #column2 {
 	grid-column-start: 2;
-	font-family: Roboto, sans serif;
+	font-family: Roboto, "sans serif";
 	color: #2B2D2F;
 	padding-left: 20px;
 }
@@ -207,7 +207,7 @@ span {
 	border-radius: 10px;
 	color: #2B2D2F;
 	width: 30%;
-	font-family: Roboto, sans serif;
+	font-family: Roboto, "sans serif";
 	text-align: center;
 }
 
