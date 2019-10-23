@@ -1,1 +1,0 @@
-For the bonus section of the assignment, I created an extra product details page. In addition to the original products details page, I created a product details page for the blackberry bun. 
