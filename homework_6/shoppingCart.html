@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bun Bun Bake Shop</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap" rel="stylesheet">
+		<script src="javascript.js" type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<header>
+			<nav id="nav">
+	     		<a href="index.html">Home</a> 
+		       	<a href="products.html">Products</a> 
+		       	<a href="about.html">About</a> 
+		       	<a href="mycart.html" id="myCart">My Cart</a> 
+		   	</nav>
+		    <h1 class="title">Bun Bun Bake Shop <br> <span id="location">Pittsburgh, PA</span></h1>
+		</header> 
+		<!-- Beginning of page-specific content !-->
+		<div id="cartContainer">
+			<div id="cartColumn">
+				<!-- Back to shopping button !-->
+				<form id="formShopping" action="products.html">
+					<button id="shoppingButtonCart" type="submit">KEEP SHOPPING</button>
+				</form>
+				<br>
+				<br>
+				<!-- Beginning of shopping cart table !-->
+				<table>
+					<tr>
+						<th>Item</th>
+						<th>Quantity</th>
+						<th>Glaze</th>
+						<th>Price</th>
+					</tr>
+					<tr>
+						<td class="cellBorder">Original Roll</td>
+						<td class="cellBorder">3</td>
+						<td class="cellBorder">Sugar-Milk</td>
+						<td class="cellBorder">$9.00</td>
+						<td><img id="trash" src = "https://image.flaticon.com/icons/svg/1214/1214428.svg"></td>
+					</tr>
+					<tr>
+						<td class="cellBorder">Blackberry Roll</td>
+						<td class="cellBorder">1</td>
+						<td class="cellBorder">Vanilla-Milk</td>
+						<td class="cellBorder">$3.00</td>
+						<td><img id="trash" src = "https://image.flaticon.com/icons/svg/1214/1214428.svg"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>Total: $12:00</td>
+					</tr>
+					<!-- Creation of checkout button !-->
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><button id="checkoutButton" type="submit">CHECKOUT</button></td>
+					</tr>
+			</div>
+		</div>

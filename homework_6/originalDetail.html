@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bun Bun Bake Shop</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap" rel="stylesheet">
+		<script src="javascript2.js" type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<header>
+			<nav id="nav">
+	     		<a href="index.html">Home</a> 
+		       	<a href="products.html">Products</a> 
+		       	<a href="about.html">About</a> 
+		       	<a href="shoppingCart.html" id="myCart">My Cart</a> 
+		   	</nav>
+		    <h1 class="title">Bun Bun Bake Shop <br> <span id="location">Pittsburgh, PA</span></h1>
+		</header> 
+		<!-- Beginning of page-specific content !-->
+		<div id="originalContainer">
+			<div id="column1">
+				<form id="formShopping" action="products.html">
+					<button id="shoppingButton" type="submit">KEEP SHOPPING</button>
+				</form>
+				<img id="originalPic2" src="https://images.unsplash.com/photo-1514509152927-0403a1b6a2d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="Original">
+				<p><strong>THE ORIGINAL</strong> our signature and most popular bun. The original is a new take on the classic roll, with hints of cinnamon and nutmeg. <br><strong>Allergens</strong>: gluten, wheat, eggs, dairy</p>
+			</div>
+			<div id="column2">
+				<h1>Quantity:</h1>
+				<p><span><button onclick="changeColor1()" class="quant" id="quant1">1</button></span> <span class="space"></span> <span><button onclick="changeColor3()" class="quant" id="quant3">3</button></span> <span class="space"></span> <span><button onclick="changeColor6()" class="quant" id="quant6">6</button></span> <span class="space"></span> <span><button onclick="changeColor12()" class="quant" id="quant12">12</button></span></p>
+				<h1>Glaze:</h1>
+				<p><span><button onclick="noGlazeColor()" class="glaze" id="none">None</button></span> <span class="space"></span> <span><button onclick="sugarColor()" class="glaze" id="sugar">Sugar-Milk</button></span> <span class="space"></span> <span><button onclick="vanillaColor()" class="glaze" id="vanilla">Vanilla-Milk</button></span> <span class="space"></span> <span><button onclick="chocolateColor()" class="glaze" id="chocolate">Double-Chocolate</button></span></p>
+					<br>
+					<br>
+					<button onclick="cartMessage()" id="addToCart" type="submit">ADD TO CART</button>
+				
+			</div>
+		</div>
+	</body>
+</html>
+
+
