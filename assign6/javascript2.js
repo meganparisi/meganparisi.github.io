@@ -1,8 +1,8 @@
 / Global counting variable to keep track of number of orders / 
 
 var cartCount = 0;
-
-/ functions to change the color of quantity buttons when clicked and add active status /  
+purchases = []
+ 
 
 function changeColor1() {
 	var quant1 = document.getElementById("quant1");
@@ -216,4 +216,97 @@ function cartMessage() {
 	console.log(cart);
 	return cartCount;
 	
+}
+
+
+function cartItem(item, quantity, glaze, price) {
+	this.item = item;
+	this.quantity = quantity;
+	this.glaze = glaze;
+	this.price = price;
+}
+
+/ changed purchase to purchases in json string figure this out / 
+
+function addToCartOriginal() {
+	quantity = Number(checkClickedQuant());
+	glaze = checkClickedGlaze();
+	price = quantity * 3;
+	item = "Original Roll"; 
+	purchase = new cartItem(item, quantity, glaze, price);
+	purchases.push(purchase);
+	console.log("got here");
+	return purchases
+}
+
+function storeCart() {
+	localStorage.setItem("myPurchase", JSON.stringify(purchases));
+}
+
+function displayCart() {
+	newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
+	var table = document.getElementById("cartTable")
+	var row = table.insertRow();
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	var cell4 = row.insertCell(3);
+	cell1.innertHTML = newPurchase.item;
+	cell2.innerHTML = newPurchase.quantity; 
+	cell3.innerHTML = newPurchase.glaze; 
+	cell4.innerHTML = newPurchase.price; 
+
+}
+
+function displayCart3() {
+	var newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
+	var purchaseLength = newPurchase.length;
+	var table = document.getElementById("cartTable");
+	for (var i = 0; i < purchaseLength; i ++) {
+		var row = document.createElement("tr");
+		table.appendChild(row);
+		var cell1 = document.createElement("td");
+		var node1 = document.createTextNode(newPurchase[i].item);
+		cell1.appendChild(node1);
+		row.appendChild(cell1);
+		var cell2 = document.createElement("td");
+		var node2 = document.createTextNode(newPurchase[i].quantity);
+		cell2.appendChild(node2);
+		row.appendChild(cell2);
+		var cell3 = document.createElement("td");
+		var node3 = document.createTextNode(newPurchase[i].glaze);
+		cell3.appendChild(node3);
+		row.appendChild(cell3);
+		var cell4 = document.createElement("td");
+		var node4 = document.createTextNode(newPurchase[i].price);
+		cell4.appendChild(node4);
+		row.appendChild(cell4);
+
+	}
+}
+
+function displayCart2() {
+	var newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
+	var table = document.getElementById("cartTable");
+	var row = document.createElement("tr");
+	table.appendChild(row);
+	console.log(row);
+	var cell1 = document.createElement("td");
+	var node1 = document.createTextNode(newPurchase.item);
+	cell1.appendChild(node1);
+	row.appendChild(cell1);
+	console.log(newPurchase.item);
+	var cell2 = document.createElement("td");
+	var node2 = document.createTextNode(newPurchase.quantity);
+	cell2.appendChild(node2);
+	row.appendChild(cell2);
+	var cell3 = document.createElement("td");
+	var node3 = document.createTextNode(newPurchase.glaze);
+	cell3.appendChild(node3);
+	row.appendChild(cell3);
+	var cell4 = document.createElement("td");
+	var node4 = document.createTextNode(newPurchase.price);
+	cell4.appendChild(node4);
+	row.appendChild(cell4);
+	console.log("this happened")
 }

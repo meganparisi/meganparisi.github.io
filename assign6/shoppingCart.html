@@ -6,10 +6,10 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap" rel="stylesheet">
-		<script src="javascript.js" type="text/javascript">
+		<script src="javascript2.js" type="text/javascript">
 		</script>
 	</head>
-	<body>
+	<body onload="displayCart3();">
 		<header>
 			<nav id="nav">
 	     		<a href="index.html">Home</a> 
@@ -29,15 +29,15 @@
 				<br>
 				<br>
 				<!-- Beginning of shopping cart table !-->
-				<table>
-					<tr>
-						<th>Item</th>
-						<th>Quantity</th>
-						<th>Glaze</th>
-						<th>Price</th>
+				<table id="cartTable">
+					<tr id="headerRow">
+						<th id="itemHead">Item</th>
+						<th id="quantityHead">Quantity</th>
+						<th id="glazeHead">Glaze</th>
+						<th id="priceHead">Price</th>
 						<th></th>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td class="cellBorder">Original Roll</td>
 						<td class="cellBorder">3</td>
 						<td class="cellBorder">Sugar-Milk</td>
@@ -50,14 +50,14 @@
 						<td class="cellBorder">Vanilla-Milk</td>
 						<td class="cellBorder">$3.00</td>
 						<td><img class="trash" alt="delete" src = "https://image.flaticon.com/icons/svg/1214/1214428.svg"></td>
-					</tr>
+					</tr> !-->
 					<tr>
 						<td></td>
 						<td></td>
 						<td></td>
-						<td>Total: $12:00</td>
+						<td id="purchaseTotal">Total:</td>
 						<td></td>
-					</tr>
+					</tr> 
 					<!-- Creation of checkout button !-->
 					<tr>
 						<td></td>
