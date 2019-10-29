@@ -105,6 +105,12 @@ main h2 {
 .bunPic {
   width: 231px;
   height: 200px;
+  transition-property: width;
+  transition-duration: 5s;
+}
+
+.bunPic:hover {
+	width: 400px;
 }
 
 .container {
@@ -323,7 +329,5 @@ td .trash {
 	font-family: Roboto, "sans serif";
 	text-align: center;
 }
-
-
 
 

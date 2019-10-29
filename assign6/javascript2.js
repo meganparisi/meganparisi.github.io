@@ -1,7 +1,7 @@
 / Global counting variable to keep track of number of orders / 
 
 var cartCount = 0;
-purchases = []
+var purchases = [];
  
 
 function changeColor1() {
@@ -218,48 +218,32 @@ function cartMessage() {
 	
 }
 
-
 function cartItem(item, quantity, glaze, price) {
 	this.item = item;
 	this.quantity = quantity;
 	this.glaze = glaze;
 	this.price = price;
-}
-
-/ changed purchase to purchases in json string figure this out / 
+} 
 
 function addToCartOriginal() {
 	quantity = Number(checkClickedQuant());
 	glaze = checkClickedGlaze();
 	price = quantity * 3;
 	item = "Original Roll"; 
-	purchase = new cartItem(item, quantity, glaze, price);
-	purchases.push(purchase);
-	console.log("got here");
-	return purchases
-}
-
-function storeCart() {
-	localStorage.setItem("myPurchase", JSON.stringify(purchases));
-}
-
-function displayCart() {
-	newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
-	var table = document.getElementById("cartTable")
-	var row = table.insertRow();
-	var cell1 = row.insertCell(0);
-	var cell2 = row.insertCell(1);
-	var cell3 = row.insertCell(2);
-	var cell4 = row.insertCell(3);
-	cell1.innertHTML = newPurchase.item;
-	cell2.innerHTML = newPurchase.quantity; 
-	cell3.innerHTML = newPurchase.glaze; 
-	cell4.innerHTML = newPurchase.price; 
-
+	var purchase = new cartItem(item, quantity, glaze, price);
+	if (localStorage.getItem("finalPurchase") !== 'null') {
+		purchases = JSON.parse(localStorage.getItem("finalPurchase"));
+		purchases.push(purchase);
+		localStorage.setItem("finalPurchase", JSON.stringify(purchases));
+	}
+	else {
+		purchases.push(purchase);
+		localStorage.setItem("finalPurchase", JSON.stringify(purchases));
+	}
 }
 
 function displayCart3() {
-	var newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
+	var newPurchase = JSON.parse(localStorage.getItem("finalPurchase"));
 	var purchaseLength = newPurchase.length;
 	var table = document.getElementById("cartTable");
 	for (var i = 0; i < purchaseLength; i ++) {
@@ -283,6 +267,25 @@ function displayCart3() {
 		row.appendChild(cell4);
 
 	}
+}
+
+
+
+
+
+function displayCart() {
+	newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
+	var table = document.getElementById("cartTable")
+	var row = table.insertRow();
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	var cell4 = row.insertCell(3);
+	cell1.innertHTML = newPurchase.item;
+	cell2.innerHTML = newPurchase.quantity; 
+	cell3.innerHTML = newPurchase.glaze; 
+	cell4.innerHTML = newPurchase.price; 
+
 }
 
 function displayCart2() {
