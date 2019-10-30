@@ -4,6 +4,8 @@ var cartCount = 0;
 var purchases = [];
  
 
+/ Functions to change color of clicked quantity button and add active status / 
+
 function changeColor1() {
 	var quant1 = document.getElementById("quant1");
 	var quant3 = document.getElementById("quant3");
@@ -89,7 +91,7 @@ function changeColor12() {
 	}
 }
 
-/ functions to change the color of glaze buttons when clicked and add active status /  
+/ Functions to change the color of glaze buttons when clicked and add active status /  
 
 function noGlazeColor(){
 	var noGlaze = document.getElementById("none");
@@ -197,7 +199,7 @@ function checkClickedGlaze() {
 	return clickedGlaze;
 }
 
-/ creates alert when add to cart is clicked and updates count next to My Cart to reflect number of orders /  
+/ creates alert when add to cart is clicked /  
 
 function cartMessage() {
 	clickedQuant = checkClickedQuant();
@@ -215,6 +217,8 @@ function cartMessage() {
 }
 
 
+/ sets cart count next to My Cart on nav bar /  
+
 function setCartCount() {
 	var newPurchase = JSON.parse(localStorage.getItem("finalPurchase"));
 	var purchaseLength = newPurchase.length;
@@ -222,13 +226,13 @@ function setCartCount() {
 }
 
 function setOtherCartCounts() {
-	console.log("this happened");
 	count = JSON.parse(localStorage.getItem("newCartCount"));
 	if (count !== null) {
 		document.getElementById("myCart").innerHTML = "My Cart " + "(" + count + ")";
 	}
 }
 
+/ creates cartItem class /  
 
 function cartItem(item, quantity, glaze, price) {
 	this.item = item;
@@ -236,6 +240,8 @@ function cartItem(item, quantity, glaze, price) {
 	this.glaze = glaze;
 	this.price = price;
 } 
+
+/ creates new object based on purchase choices and stores selected purchase in local storage / 
 
 function addToCartOriginal() {
 	quantity = Number(checkClickedQuant());
@@ -254,6 +260,8 @@ function addToCartOriginal() {
 	}
 	setCartCount();
 }
+
+/ loops through purchases in local storage and creates table to display info / 
 
 function displayCart3() {
 	var newPurchase = JSON.parse(localStorage.getItem("finalPurchase"));
@@ -287,21 +295,18 @@ function displayCart3() {
 		btn.className = "remove";
 		btn.innerHTML = "Remove";
 		btn.onclick = function() { removeFromStorage(); };
-		console.log(newPurchase[i]);
 		cell5.appendChild(btn);
 		row.appendChild(cell5);
 	}
 }
 
+/ removes an order from the cart by removing from the table and from local storage  / 
+
 function removeFromStorage() {
 	var cell = event.target.parentNode;
-	console.log(cell);
 	var row = cell.parentNode;
 	var i = row.rowIndex; 
 	purchases = JSON.parse(localStorage.getItem("finalPurchase"));
-	console.log(purchases);
-	console.log(purchases[i]);
-	console.log(i);
 	purchases.splice(i-1,1);
 	localStorage.setItem("finalPurchase", JSON.stringify(purchases));
 	row.parentNode.removeChild(row);

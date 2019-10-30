@@ -314,7 +314,7 @@ td .trash {
 	text-align: center;
 }
 
-/* Checkout button */
+/* General page styling for items not in the table */
 
 #cartColumn2 {
 	padding-left: 45px;
@@ -324,6 +324,8 @@ td .trash {
 	font-family: Roboto, sans serif;
 	
 }
+
+/* Checkout button style */
 #checkoutButton {
 	background-color: #FF9681;
 	font-size: 18px;
@@ -334,6 +336,8 @@ td .trash {
 	font-family: Roboto, "sans serif";
 	text-align: center;
 }
+
+/* Remove button styling  */
 
 td .remove {
 	cursor: pointer;
