@@ -319,6 +319,11 @@ td .trash {
 
 /* Checkout button */
 
+#footerContainer {
+	width: 100px;
+	font-family: Roboto, sans serif;
+	
+}
 #checkoutButton {
 	background-color: #FF9681;
 	font-size: 18px;
@@ -328,6 +333,12 @@ td .trash {
 	width: 60%;
 	font-family: Roboto, "sans serif";
 	text-align: center;
+	float: right;
 }
 
+#footerContainer p {
+	font-family: Roboto, sans serif;
+	font-size: 21px;
+	font-style: bold;
+}
 
