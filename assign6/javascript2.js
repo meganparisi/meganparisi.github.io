@@ -220,11 +220,22 @@ function cartMessage() {
 	} else {
 		alert (clickedQuant + " " + clickedGlaze + " rolls have been added to your cart!");
 	}
-	cartCount = cartCount + 1;
-	cart = document.getElementById("myCart").innerHTML = "My Cart " + "(" + cartCount + ")";
-	console.log(cart);
-	return cartCount;
 	
+}
+
+function setCartCount() {
+	var table = document.getElementById("cartTable");
+	for (var i = 1, row; row=table.rows[i]; i++) {
+		cartCount = cartCount + 1;
+	}
+	document.getElementById("myCart").innerHTML = "My Cart " + "(" + cartCount + ")";
+	localStorage.setItem("newCartCount", JSON.stringify(cartCount));
+}
+
+function setOtherCartCounts() {
+	console.log("this happened");
+	count = JSON.parse(localStorage.getItem("newCartCount"));
+	document.getElementById("myCart").innerHTML = "My Cart " + "(" + count + ")";
 }
 
 function cartItem(item, quantity, glaze, price) {
@@ -257,6 +268,7 @@ function displayCart3() {
 	var table = document.getElementById("cartTable");
 	for (var i = 0; i < purchaseLength; i ++) {
 		var row = document.createElement("tr");
+		row.id = "row"+i
 		table.appendChild(row);
 		var cell1 = document.createElement("td");
 		var node1 = document.createTextNode(newPurchase[i].item);
@@ -271,54 +283,38 @@ function displayCart3() {
 		cell3.appendChild(node3);
 		row.appendChild(cell3);
 		var cell4 = document.createElement("td");
-		var node4 = document.createTextNode(newPurchase[i].price);
+		var node4 = document.createTextNode("$"+newPurchase[i].price);
 		cell4.appendChild(node4);
 		row.appendChild(cell4);
-
+		var cell5 = document.createElement("td");
+		var btn = document.createElement('input');
+		btn.type = "button";
+		btn.className = "remove";
+		btn.onclick = function() { removeFromStorage(); };
+		console.log(newPurchase[i]);
+		cell5.appendChild(btn);
+		row.appendChild(cell5);
 	}
 }
 
-
-
-
-
-function displayCart() {
-	newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
-	var table = document.getElementById("cartTable")
-	var row = table.insertRow();
-	var cell1 = row.insertCell(0);
-	var cell2 = row.insertCell(1);
-	var cell3 = row.insertCell(2);
-	var cell4 = row.insertCell(3);
-	cell1.innertHTML = newPurchase.item;
-	cell2.innerHTML = newPurchase.quantity; 
-	cell3.innerHTML = newPurchase.glaze; 
-	cell4.innerHTML = newPurchase.price; 
-
+function removeFromStorage() {
+	purchases = JSON.parse(localStorage.getItem("finalPurchase"));
+	purchases.pop();
+	localStorage.setItem("finalPurchase", JSON.stringify(purchases));
 }
 
-function displayCart2() {
-	var newPurchase = JSON.parse(localStorage.getItem("myPurchase"));
+
+function removeFromCart(givenId) {
+	console.log('here');
 	var table = document.getElementById("cartTable");
-	var row = document.createElement("tr");
-	table.appendChild(row);
-	console.log(row);
-	var cell1 = document.createElement("td");
-	var node1 = document.createTextNode(newPurchase.item);
-	cell1.appendChild(node1);
-	row.appendChild(cell1);
-	console.log(newPurchase.item);
-	var cell2 = document.createElement("td");
-	var node2 = document.createTextNode(newPurchase.quantity);
-	cell2.appendChild(node2);
-	row.appendChild(cell2);
-	var cell3 = document.createElement("td");
-	var node3 = document.createTextNode(newPurchase.glaze);
-	cell3.appendChild(node3);
-	row.appendChild(cell3);
-	var cell4 = document.createElement("td");
-	var node4 = document.createTextNode(newPurchase.price);
-	cell4.appendChild(node4);
-	row.appendChild(cell4);
-	console.log("this happened")
+	for (var i = 0, row; row=table.rows[i]; i++) {
+		console.log(row.id+"ROWID");
+		console.log(givenId+"GIVENID");
+		if (row.id == givenId) {
+			console.log("matching ids");
+			row.parentNode.removeChild(row);
+			console.log('here');
+		}
+	}
+
 }

@@ -226,8 +226,11 @@ function setCartCount() {
 function setOtherCartCounts() {
 	console.log("this happened");
 	count = JSON.parse(localStorage.getItem("newCartCount"));
-	document.getElementById("myCart").innerHTML = "My Cart " + "(" + count + ")";
+	if (count !== null) {
+		document.getElementById("myCart").innerHTML = "My Cart " + "(" + count + ")";
+	}
 }
+
 
 function cartItem(item, quantity, glaze, price) {
 	this.item = item;
@@ -242,13 +245,13 @@ function addToCartOriginal() {
 	price = quantity * 3;
 	item = "Original Roll"; 
 	var purchase = new cartItem(item, quantity, glaze, price);
-	if (localStorage.getItem("finalPurchase") !== 'null') {
+	if (localStorage.getItem("finalPurchase") !== null) {
 		purchases = JSON.parse(localStorage.getItem("finalPurchase"));
 		purchases.push(purchase);
 		localStorage.setItem("finalPurchase", JSON.stringify(purchases));
 	}
 	else {
-		purchases.push(purchase);
+		purchases = [purchase];
 		localStorage.setItem("finalPurchase", JSON.stringify(purchases));
 	}
 }
@@ -257,9 +260,11 @@ function displayCart3() {
 	var newPurchase = JSON.parse(localStorage.getItem("finalPurchase"));
 	var purchaseLength = newPurchase.length;
 	var table = document.getElementById("cartTable");
+	rowIDs = []
 	for (var i = 0; i < purchaseLength; i ++) {
 		var row = document.createElement("tr");
 		row.id = "row"+i
+		rowIDs.push(i);
 		table.appendChild(row);
 		var cell1 = document.createElement("td");
 		var node1 = document.createTextNode(newPurchase[i].item);
@@ -278,9 +283,10 @@ function displayCart3() {
 		cell4.appendChild(node4);
 		row.appendChild(cell4);
 		var cell5 = document.createElement("td");
-		var btn = document.createElement('input');
+		var btn = document.createElement('submit');
 		btn.type = "button";
 		btn.className = "remove";
+		btn.innerHTML = "Remove";
 		btn.onclick = function() { removeFromStorage(); };
 		console.log(newPurchase[i]);
 		cell5.appendChild(btn);
@@ -289,11 +295,24 @@ function displayCart3() {
 }
 
 function removeFromStorage() {
+	var cell = event.target.parentNode;
+	console.log(cell);
+	var row = cell.parentNode;
+	var i = row.rowIndex; 
 	purchases = JSON.parse(localStorage.getItem("finalPurchase"));
-	purchases.pop();
+	console.log(purchases);
+	console.log(purchases[i]);
+	console.log(i);
+	purchases.splice(i-1,1);
 	localStorage.setItem("finalPurchase", JSON.stringify(purchases));
+	row.parentNode.removeChild(row);
 }
 
+function removeFromStorage2() {
+	purchases = JSON.parse(localStorage.getItem("finalPurchase"));
+	delete purchases[i];
+	localStorage.setItem("finalPurchase", JSON.stringify(purchases));
+}
 
 function removeFromCart(givenId) {
 	console.log('here');
