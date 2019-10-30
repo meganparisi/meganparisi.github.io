@@ -20,7 +20,7 @@
 		    <h1 class="title">Bun Bun Bake Shop <br> <span id="location">Pittsburgh, PA</span></h1>
 		</header> 
 		<!-- Beginning of page-specific content !-->
-		<div id="cartContainer">
+		<div id="cartContainer" onchange="setCartCount()">
 			<div id="cartColumn">
 				<!-- Back to shopping button !-->
 				<form id="formShopping" action="products.html">
@@ -43,7 +43,6 @@
 		</div>
 		<div id="footerContainer">
 			<div id="cartColumn2">
-				<p id=purhcaseTotal">Total:</p>
 				<form>
 					<button id="checkoutButton" type="submit">CHECKOUT</button>
 				</form>

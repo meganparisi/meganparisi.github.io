@@ -214,13 +214,11 @@ function cartMessage() {
 	
 }
 
+
 function setCartCount() {
-	var table = document.getElementById("cartTable");
-	for (var i = 1, row; row=table.rows[i]; i++) {
-		cartCount = cartCount + 1;
-	}
-	document.getElementById("myCart").innerHTML = "My Cart " + "(" + cartCount + ")";
-	localStorage.setItem("newCartCount", JSON.stringify(cartCount));
+	var newPurchase = JSON.parse(localStorage.getItem("finalPurchase"));
+	var purchaseLength = newPurchase.length;
+	document.getElementById("myCart").innerHTML = "My Cart " + "(" + purchaseLength + ")";
 }
 
 function setOtherCartCounts() {
@@ -254,6 +252,7 @@ function addToCartOriginal() {
 		purchases = [purchase];
 		localStorage.setItem("finalPurchase", JSON.stringify(purchases));
 	}
+	setCartCount();
 }
 
 function displayCart3() {
@@ -306,25 +305,5 @@ function removeFromStorage() {
 	purchases.splice(i-1,1);
 	localStorage.setItem("finalPurchase", JSON.stringify(purchases));
 	row.parentNode.removeChild(row);
-}
-
-function removeFromStorage2() {
-	purchases = JSON.parse(localStorage.getItem("finalPurchase"));
-	delete purchases[i];
-	localStorage.setItem("finalPurchase", JSON.stringify(purchases));
-}
-
-function removeFromCart(givenId) {
-	console.log('here');
-	var table = document.getElementById("cartTable");
-	for (var i = 0, row; row=table.rows[i]; i++) {
-		console.log(row.id+"ROWID");
-		console.log(givenId+"GIVENID");
-		if (row.id == givenId) {
-			console.log("matching ids");
-			row.parentNode.removeChild(row);
-			console.log('here');
-		}
-	}
-
+	setCartCount();
 }
