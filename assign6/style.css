@@ -105,13 +105,8 @@ main h2 {
 .bunPic {
   width: 231px;
   height: 200px;
-  transition-property: width;
-  transition-duration: 5s;
 }
 
-.bunPic:hover {
-	width: 400px;
-}
 
 .container {
   min-width: 500px;
@@ -330,16 +325,14 @@ td .trash {
 	
 }
 #checkoutButton {
-	padding-left: 45px;
 	background-color: #FF9681;
 	font-size: 18px;
 	font-weight: bold;
 	border-radius: 10px;
 	color: #2B2D2F;
-	width: 100px;
+	width: 15%;
 	font-family: Roboto, "sans serif";
 	text-align: center;
-	float: right;
 }
 
 td .remove {
