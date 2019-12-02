@@ -207,7 +207,6 @@ div.card-body {
 }
 
 .questionWording {
-	font-family: 'Quicksand', sans-serif;
-	font-weight: bold;
-	justify-content: left;
+	font-family: 'Playfair Display', serif;
+	font-weight: normal;
 }
