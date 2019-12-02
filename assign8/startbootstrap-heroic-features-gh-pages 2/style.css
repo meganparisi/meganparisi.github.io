@@ -183,6 +183,7 @@ div.card-body {
 #detailHeader {
 	opacity: .75;
 	background-color: #9DF2C4;
+	width: 100%;
 }
 
 #detailBody {
@@ -200,6 +201,9 @@ div.card-body {
 .questionOption {
 	background-color: rgba(251, 149, 139, .75);
 	font-family: 'Quicksand', sans-serif;
+	text-align: left;
+	border-radius: 10px;
+	border-color: white;
 }
 
 .questionWording {

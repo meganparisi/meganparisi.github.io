@@ -12,7 +12,7 @@ var canvas
 function setup() {
   canvas = createCanvas(screen.width, screen.height);
   //frameRate(60);
-  canvas.position(0,120);
+  canvas.position(0,200);
   canvas.style('z-index', '-3');
   for (i = 0; i < 100; i++) {
     rain[i] = new Rain(random(50, 550), random(0, -3000));
