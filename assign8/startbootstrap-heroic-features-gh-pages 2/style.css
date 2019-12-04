@@ -75,7 +75,7 @@ div.card-body {
 }
 
 .questionOption:hover {
-	background-color: #E48B83;
+	background-color: #FDA16C;
 }
 
 .question {
@@ -195,11 +195,11 @@ div.card-body {
 	border: solid;
 	border-radius: 25px;
 	border-color: rgba(251, 149, 139, .75);
-	width: 75%;
+	width: 100%;
 }
 
 .questionOption {
-	background-color: rgba(251, 149, 139, .75);
+	background-color: #ffba92;
 	font-family: 'Quicksand', sans-serif;
 	text-align: left;
 	border-radius: 10px;
@@ -209,4 +209,8 @@ div.card-body {
 .questionWording {
 	font-family: 'Playfair Display', serif;
 	font-weight: normal;
+	font-size: 28px;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 30px;
 }

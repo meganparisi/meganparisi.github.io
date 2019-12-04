@@ -74,13 +74,12 @@
       <div class="questionCard col-lg-8 col-md-6 mb-4">
         <div>
           <div id="question1" class="question">
-            <span></span><br>
-            <h4 class="questionWording">What's the best way to water this plant?</h4>
+            <h4 class="questionWording">1. What's the best way to water this plant?</h4>
             <br>
             <p>
-              <button onclick="addShake1()" class="questionOption">Water all year round by soaking the soil and then letting it dry completely before watering again. </button><br><br>
-              <button onclick="addShake1()" class="questionOption">Water every two to three days throughout the year. </button><br><br>
-              <button class="questionOption" onclick="changeOpacity3(); rainingTrue();">Completely soak the soil and then let it dry out completely before you water again, but do not water at all in the winter.</button><br>
+              <button onclick="addShake1(); addRed(this);" class="questionOption">Water all year round by soaking the soil and then letting it dry completely before watering again. </button><br><br>
+              <button onclick="addShake1(); addRed(this);" class="questionOption">Water every two to three days throughout the year. </button><br><br>
+              <button class="questionOption" onclick="changeOpacity3(); rainingTrue(); addGreen(this);">Completely soak the soil and then let it dry out completely before you water again, but do not water at all in the winter.</button><br>
               <span></span><br>
               <span></span><br>
             </p>
@@ -104,11 +103,11 @@
       <div class="col-lg-8 col-md-6 mb-4">
         <div class="questionCard">
           <div id="question2" class="question">
-            <h4 class="questionWording">How much sun does this succulent need?</h4>
+            <h4 class="questionWording">2. How much sun does this succulent need?</h4>
             <p class="card-text">
-              <button class="questionOption" onclick="addShake2()">Full sun</button><br><br>
-              <button class="questionOption" onclick="changeOpacity4(); changeSun();">Partial shade</button><br><br>
-              <button class="questionOption" onclick="addShake2()">Full shade</button><br>
+              <button class="questionOption" onclick="addShake2(); addRed(this);">Full sun</button><br><br>
+              <button class="questionOption" onclick="changeOpacity4(); changeSun(); addGreen(this);">Partial shade</button><br><br>
+              <button class="questionOption" onclick="addShake2(); addRed(this);">Full shade</button><br>
               <span></span><br>
               <span></span><br>
             </p>
@@ -131,11 +130,11 @@
       <div class="col-lg-8 col-md-6 mb-4">
         <div class="questionCard">
           <div class="question" id="question3">
-            <h4 class="questionWording">Another question here</h4>
+            <h4 class="questionWording">3. Another question here</h4>
             <p class="card-text">
-              <button class="questionOption" onclick="changeOpacity5()">Option 1</button><br>
-              <button class="questionOption" onclick="addShake3()">Option 2</button><br>
-              <button class="questionOption" onclick="addShake3()">Option 3</button><br>
+              <button class="questionOption" onclick="changeOpacity5(); addGreen(this);">Option 1</button><br>
+              <button class="questionOption" onclick="addShake3(); addRed(this);">Option 2</button><br>
+              <button class="questionOption" onclick="addShake3(); addRed(this);">Option 3</button><br>
               <span></span><br>
               <span></span><br>
             </p>

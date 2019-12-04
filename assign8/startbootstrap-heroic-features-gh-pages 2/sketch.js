@@ -182,3 +182,11 @@ function addShake3() {
     element.classList.remove("shake");
   }, 1000);
 }
+
+function addRed(obj) {
+  obj.style.backgroundColor = '#ff8080';
+}
+
+function addGreen(obj) {
+  obj.style.backgroundColor = '#c6f1d6';
+}
