@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-  		<title>Know Your Succulent</title>
-  		<script src="p5.js"></script>
-  		<script src="sketch.js"></script>
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  		<script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
-  		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
-		<h1>How Well Do You Know Your Succulent?</h1>
-		<p>All succulents have similar overall needs, but do you know how much water and sun your particular plant needs? Play our game to find out.</p>
-		<form action="details.html">
-			<button class="subButton" type="submit">Play!</button>
-		</form>
-		<div class="pics" id="fade">
-        <img width="200" height="200" src="http://malsup.github.com/images/beach1.jpg" >
-        <img width="200" height="200" src="http://malsup.github.com/images/beach2.jpg" >
-        <img width="200" height="200" src="http://malsup.github.com/images/beach3.jpg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Succulents">
+  <meta name="author" content="Megan">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Quicksand:400,600,700&display=swap" rel="stylesheet">
+  <title>Know Your Succulents</title>
+  <!-- CSS styling sheets -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Bootstrap core CSS -->
+  <link href="assets/bootstrap_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="assets/bootstrap_files/css/heroic-features.css" rel="stylesheet">
+</head>
+<body class="pageBody">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Know Your Succulents</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="details.html">Succulents by Type</a>
+          </li>
+        </ul>
+      </div>
     </div>
-	</body>
+  </nav>
+  <!-- Page Content -->
+  <div class="home container">
+    <!-- Description ox with call to action -->
+    <header class="jumbotron my-4">
+      <img id="homePic" class="animated bounceInDown" alt="cactus" src="assets/images/Component13.png">
+      <h1 id="title" class="display-3">Caring for your succulents</h1>
+      <p id="homeBody">Succulents as a whole have very similar care needs, but some particular plants need slightly different care than others. Find out your plant's specific needs to give your succulent the best possible care.</p>
+      <a href="details.html" class="btn btn-primary btn-lg">Start!</a>
+    </header>
+    <!-- Hidden picture to create more space at bottom of page-->
+    <div>
+      <img id="hiddenHomeImage" alt="hidden image" src="assets/images/Component13.png">
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center">Copyright &copy; Megan Parisi</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="assets/bootstrap_files/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap_files/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

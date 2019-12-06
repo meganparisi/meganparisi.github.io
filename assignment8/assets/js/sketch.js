@@ -1,14 +1,15 @@
-//Week4 icm assignment by Jingyi
-//Learn how to make rain drop from https://editor.p5js.org/amandamje/sketches/ByMkKkV0
-//Thanks to the help of resident Seho
+//Code for rain drop when first question is answered correctly
+//Code for rain animation taken from here: https://editor.p5js.org/monicawen/sketches/HkU-BCJqm
 
+//Variables for rain 
 var rain = [];
 var rainingNow = false;
 var sunNow = false
-var bgcolor = ('#E2D6FA');
+var bgcolor = ('#F7BBB5');
 var img
 var canvas 
 
+//Setting up the canvas for rain drop
 function setup() {
   canvas = createCanvas(screen.width, screen.height);
   //frameRate(60);
@@ -19,6 +20,7 @@ function setup() {
   }
 }
 
+//Drawing the rain
 function draw() {
   background(bgcolor);
 
@@ -33,13 +35,9 @@ function draw() {
       rain[i].splash();
     }
   } 
-  if (sunNow == true) {
-    sun = drawSun();
-    //background(160,209,230); 
-  }
 }
 
-
+//Drawing the actual rain drops and creating the splash
 function Rain(x, y) {
   this.x = x;
   this.y = y;
@@ -85,7 +83,7 @@ function Rain(x, y) {
   }
 }
 
-
+//Setting raining condition to true
 function rainingTrue() {
   //background(160,209,230);
   rainingNow = true;
@@ -95,35 +93,15 @@ function rainingTrue() {
   //Change to blue sky
 }
 
+//Setting raining condition to false
 function sunTrue() {
   sunNow = true;
   rainingNow = false;
 }
 
-  
-function drawSun() {
+//Start of Javascript not adopted from outside source
 
-  fill(245, 187, 87);
-  stroke(245, 187, 87);
-  push();
-  translate(100, 80);
-  rotate(radians(frameCount / 2));
-  ellipse(0, 0, 60, 60);
-  line(0, -60, 0, -40);
-  line(0, 40, 0, 60);
-  line(-45, -45, -30, -30);
-  line(45, -45, 30, -30);
-  line(-60, 0, -40, 0);
-  line(40, 0, 60, 0);
-  line(-45, 45, -30, 30);
-  line(45, 45, 30, 30);
-  pop();
-  noFill();
-}
-
-//Other JS starts here 
-
-
+//Functions to make cactus graphics visible as questions are answered in order to give the appearance of flowers growing
 function changeOpacity3() {
   document.getElementById("cactus2").classList.add("bottom");
 }
@@ -136,7 +114,7 @@ function changeOpacity5() {
   document.getElementById("cactus4").classList.add("bottom");
 }
 
-
+//Makes sun visible and animated when question two is answered correctly. Sun disappears after timout
 function changeSun() {
   sun = document.getElementById("sun");
   sun.style.opacity = "1";
@@ -153,6 +131,7 @@ function changeSun() {
   
 }
 
+//Following functions animate question options to shake when clicked and incorrect
 function addShake1() {
   element = document.getElementById("question1");
   element.classList.add("animated");
@@ -183,10 +162,12 @@ function addShake3() {
   }, 1000);
 }
 
+//Turns a question option red when it has been clicked and is incorrect
 function addRed(obj) {
   obj.style.backgroundColor = '#ff8080';
 }
 
+//Turns a question option green when it has been clicked and is correct
 function addGreen(obj) {
   obj.style.backgroundColor = '#c6f1d6';
 }

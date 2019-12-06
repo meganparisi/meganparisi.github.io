@@ -1,0 +1,246 @@
+/* HOMEPAGE */
+
+/* Nav bar format */
+.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top {
+	font-family: 'Quicksand', sans-serif;
+}
+
+/* Margin at the top to move main content down  */
+.home.container {
+  margin-top:100px;
+}
+
+/* Start button formatting */
+.btn.btn-primary.btn-lg {
+	font-family: 'Quicksand', sans-serif;
+	background-color: #FB958B;
+	opacity: 1;
+	border-color: #E66F63;
+}
+
+/* Setting start button to change color on hover  */
+.btn.btn-primary.btn-lg:hover {
+  background-color: #F45647;
+}
+
+/* Formatting for the main content container */
+.jumbotron.my-4 {
+	background-color: #E2D6FA;
+	opacity: .85;
+	width: 80%;
+	
+}
+
+/* Font styling for the title */
+h1#title {
+	font-weight: bold;
+	font-family: 'Playfair Display', serif;
+}
+
+/* Font styling for body of content*/
+#homeBody {
+	font-family: 'Quicksand', sans-serif;
+}
+
+/* Background image for page */
+.pageBody {
+	background-image: url("../images/background.png");
+}
+
+/* Settings for cactus picture */
+#homePic {
+  float: right;
+  height: 300px;
+
+}
+
+/* Creating more space at bottom of the page before the footer */
+#hiddenHomeImage {
+  opacity:0;
+}
+
+
+/* DETAILS PAGE */
+
+/* setting background color */
+.detailsPageBody {
+  background-color: #EDE8F7;
+}
+
+/* formatting for header content container */
+.details.jumbotron.my-4 {
+  background-image: linear-gradient(#B19CD9, #D5C1FD);
+  opacity: .85;
+  width: 80%;
+
+/* header text formatting */
+}
+h1.display-3 {
+	font-weight: bold;
+	font-family: 'Playfair Display', serif;
+}
+
+/* styling plant title on each card*/
+h4.card-title {
+	font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+}
+
+/* styling backround of plant title on each card*/
+div.card-body {
+	background-image: linear-gradient(#FCA8A0, #F7BBB5);
+}
+
+/* setting dimensions for each plant picture */
+.cactusImage {
+	height: 250px;
+	width: 100%;
+}
+
+/* creating border around card and linking to hover animation */
+.card.h-100 {
+	transition: all .5s ease-in-out;
+  border-color: #F7BBB5;
+  border-width: 5px;
+}
+
+/* hover animation, each card expands on hover */
+.card.h-100:hover {
+	transform: scale(1.1);
+}
+
+/* formatting cactus graphic in header */
+#detailsPic {
+  float: right;
+  height: 200px;
+}
+
+/* INDIVIDUAL CACTUS PAGES */
+
+/* styling each individual question option */
+.questionOption {
+	width: 75%;
+	height: 50%;
+  background-color: #EDE8F7;
+  font-family: 'Quicksand', sans-serif;
+  text-align: left;
+  border-radius: 5px;
+  border-color: #B19CD9;
+  border-width: 5px;
+}
+
+/* changing color of question option on hover */
+.questionOption:hover {
+	background-color: #BDA7E8;
+}
+
+/* animation for scale on hover of entire question */
+.questionCard {
+  transition: all .5s ease-in-out;
+  
+}
+
+/* animation that makes question card grow on hover */
+.questionCard:hover {
+  transform: scale(1.1);
+}
+
+/* header formatting */
+#detailHeader {
+  opacity: .95;
+  background-image: linear-gradient(#EDE8F7, #FFFFFF);
+  width: 100%;
+}
+
+/* page background color*/
+#detailBody {
+  background-color: #F7BBB5;
+}
+
+/* setting background color and formatting for question card */
+.question {
+  background-color: #E2D6FA;
+  border-radius: 25px;
+  width: 100%;
+}
+
+/* styling text for each question option */
+.questionWording {
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 28px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+/* setting up animation for cactus transition on correct question answer, the correct cactus image gets opacity changed from 0 to 1 in order to become visible and create the appearance of flowers growing*/
+.bottom {
+  animation-name: fade;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;  
+}
+
+/* key frames for animation described above */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* setting up animation for sun to appear to shine when question 2 answered correctly */
+.sunGrow {
+	animation-name: shine;
+	animation-timing-function:ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+}
+
+/* key frames for animation described above */
+@keyframes shine {
+  0% {
+    transform: scale(1.0)
+  }
+  50% {
+  	transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* setting up animation that makes sun disappear */
+.sunFade {
+	animation-name: fadeMore;
+	animation-timing-function: ease-in;
+  	animation-iteration-count: 1;
+  	animation-duration: 1s;
+  	animation-fill-mode: forwards;  
+}
+
+/* key frames for animation described above */
+@keyframes fadeMore {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
